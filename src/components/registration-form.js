@@ -9,8 +9,8 @@ const matchesPassword = matches('password');
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
-        const {username, password, firstName, lastName} = values;
-        const user = {username, password, firstName, lastName};
+        const {fullname, email, username, password } = values;
+        const user = {fullname, email, username, password };
         return this.props
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(username, password)));
@@ -23,10 +23,10 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <label htmlFor="firstName">First name</label>
-                <Field component={Input} type="text" name="firstName" />
-                <label htmlFor="lastName">Last name</label>
-                <Field component={Input} type="text" name="lastName" />
+                <label htmlFor="fullname">Full Name</label>
+                <Field component={Input} type="text" name="fullname" />
+                <label htmlFor="email">Email</label>
+                <Field component={Input} type="email" name="email" />
                 <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
