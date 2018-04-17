@@ -15,14 +15,14 @@ export class MainPage extends React.Component {
           Translate the word in the text box and hit submit to check your
           answer.
         </p>
+
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  videos: state.video.videos,
-  userWatchID: state.userWatchID.userWatchID
+  questions: state.question.questions,
 });
 
-export default connect(mapStateToProps)(VideoPage);
+export default connect(mapStateToProps);
