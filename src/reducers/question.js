@@ -1,12 +1,12 @@
-import * as actions from '../actions/questions';
+import * as actions from '../actions/question';
 
 const initialState = {
-	questions: [],
+	question: {},
 	loading: false,
 	error: null
 };
 
-export default function reducer(state = initialState, action) {
+export default function questionReducer(state = initialState, action) {
 	if (action.type === actions.FETCH_QUESTION_REQUEST) {
 		console.log('REDUCER');
 		return Object.assign({}, state, {
@@ -16,7 +16,7 @@ export default function reducer(state = initialState, action) {
 	if (action.type === actions.FETCH_QUESTION_SUCCESS) {
 		return Object.assign({}, state, {
 			loading: false,
-			questions: action.question
+			question: action.question
 		});
 	}
 	if (action.type === actions.FETCH_QUESTION_ERROR) {
