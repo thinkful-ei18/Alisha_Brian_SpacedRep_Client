@@ -28,6 +28,8 @@ export class Dashboard extends React.Component {
           <h1>{this.props.question.question}</h1>
         </div>
         <input type="text" placeholder="your answer"></input>
+        <button type="submit">Check Your Answer</button>
+        <button>skip</button>
       </div>
     );
   }
