@@ -17,6 +17,22 @@ export const fetchQuestionError = error => ({
   error
 });
 
+export const SUBMIT_ANSWER_REQUEST = 'SUBMIT_ANSWER_REQUEST';
+export const submitAnswerRequest = () => ({
+    type: SUBMIT_ANSWER_REQUEST
+})
+
+export const SUBMIT_ANSWER_SUCCESS = 'SUBMIT_ANSWER_SUCCESS';
+export const submitAnswerSuccess = () => ({
+    type: SUBMIT_ANSWER_SUCCESS
+})
+
+export const SUBMIT_ANSWER_ERROR = 'SUBMIT_ANSWER_ERROR';
+export const submitAnswerError = error => ({
+    type: SUBMIT_ANSWER_ERROR,
+    error
+})
+
 export const fetchQuestion = () => (dispatch, getState) => {
   const jwt = getState().auth.authToken;
   fetch(`${API_BASE_URL}/user/question`, {
@@ -39,3 +55,27 @@ export const fetchQuestion = () => (dispatch, getState) => {
       dispatch(fetchQuestionError(err));
     });
 };
+
+export const submitAnswer = (input) => (dispatch, getState) => {
+  dispatch(submitAnswerRequest());
+  const jwt = getState().auth.authToken;
+  return fetch (`${API_BASE_URL}/user/validate`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type':'application/json',
+          Authorization: `Bearer ${jwt}`
+      },
+      body: JSON.stringify({
+        input
+      })
+  })
+  .then(res => {
+      if(!res.ok) {
+        throw new Error(res.statusTest)
+      }
+      dispatch(submitAnswerSuccess());
+      dispatch(fetchQuestion());
+  }).catch(err =>
+      dispatch(submitAnswerError(err))
+  );
+}
