@@ -24,6 +24,18 @@ export default function questionReducer(state = initialState, action) {
 			loading: false,
 			error: action.error
 		});
+	} else if (action.type === actions.SUBMIT_ANSWER_REQUEST) {
+        return Object.assign({}, state, {
+          loading: true
+        });
+    } else if (action.type === actions.SUBMIT_ANSWER_SUCCESS) {
+        return Object.assign({}, state, {
+          loading: false
+        });
+    } else if (action.type === actions.SUBMIT_ANSWER_ERROR) {
+        return Object.assign({}, state, {
+            error: action.error
+        })
 	}
 	return state;
 }
