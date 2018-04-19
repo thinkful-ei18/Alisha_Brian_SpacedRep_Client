@@ -21,3 +21,9 @@ export const saveUserCredentials = user => {
         localStorage.setItem('user', JSON.stringify(user));
     } catch (e) {}
 }
+
+export const clearUserCredentials = () => {
+    try {
+        localStorage.removeItem('user');
+    } catch (e) {}
+};
