@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import {loadAuthToken} from './local-storage';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
-import {setAuthToken, refreshAuthToken} from './actions/auth';
+import {setAuthToken, authSuccess, refreshAuthToken} from './actions/auth';
 import questionReducer from './reducers/question'
 
 const store = createStore(
@@ -19,10 +19,11 @@ const store = createStore(
 
 // Hydrate the authToken from localStorage if it exist
 const authToken = loadAuthToken();
+const user = JSON.parse(localStorage.getItem('user'));
+
 if (authToken) {
-    const token = authToken;
-    store.dispatch(setAuthToken(token));
-    // store.dispatch(refreshAuthToken());
+    store.dispatch(setAuthToken(authToken));
+    store.dispatch(authSuccess(user));
 }
 
 export default store;
