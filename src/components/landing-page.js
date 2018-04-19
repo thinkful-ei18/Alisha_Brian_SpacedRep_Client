@@ -13,10 +13,15 @@ export function LandingPage(props) {
         return <Redirect to="/dashboard" />;
     } 
 
+    const style = {
+        "text-decoration": "none",
+        color: "#19227D"
+    }
+
     return (
         <div className="landing-page-component">
             <LoginForm />
-            <Link to="/register">Register</Link>
+            <Link to="/register" style={style}>Register</Link>
         </div>
     );
 }

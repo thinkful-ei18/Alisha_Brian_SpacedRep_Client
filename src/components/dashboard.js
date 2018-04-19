@@ -59,21 +59,21 @@ export class Dashboard extends React.Component {
       <div className='dashboard-component'>
 
         <div className="dashboard-username">
-          <p>Salut {this.props.username}!</p>
+          Salut {this.props.username}!
         </div>
 
         <div className="header">
-          <h1 className="french-cta">Apprenons le français!</h1>
-          <h3 className="english-cta">Let's Learn French!</h3>
-          <h5 className="french-prompt">Quelle est la traduction en anglais de ce mot français?</h5>
-          <h6 className="english-prompt">What is the English translation of the French word?</h6>
+          <h2 className="french-cta">Apprenons le français!</h2>
+          <h4 className="english-cta">( Let's Learn French! )</h4>
+          <h3 className="french-prompt">Quelle est la traduction en anglais de ce mot français?</h3>
+          <h6 className="english-prompt">( What is the English translation of the French word? )</h6>
         </div>
 
         <div className="user-question">
           <h1>{this.props.question.question}</h1>
         </div>
 
-        <div className="user-feedback">
+        <div>
           {isFeedback ? (<AnswerFeedback feedback={this.state.feedback} onClick={() => this.onNextQuestion()} />)
             : 
             (<AnswerButton onClick={input => this.onAnswerSubmit(input)}/>)

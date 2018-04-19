@@ -23,8 +23,8 @@ export class HeaderBar extends React.Component {
         }
         return (
             <div className="header-bar-component">
-                <h1 className="app-name">Foodie Phonetics</h1>
                 {logOutButton}
+                <h1 className="app-name">Foodie Phonetics</h1>
             </div>
         );
     }
