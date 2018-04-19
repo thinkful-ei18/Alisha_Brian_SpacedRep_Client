@@ -1,11 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import requiresLogin from "./requires-login";
-import { Link } from "react-router-dom";
+
 import { fetchQuestion, submitAnswer } from "../actions/question";
+import { setAuthToken, authSuccess } from '../actions/auth'
 import AnswerButton from "./answer-button.js"
 import AnswerFeedback from "./answer-feedback" 
+
 import "./dashboard.css";
+
 
 export class Dashboard extends React.Component {
   constructor(props) {
@@ -15,10 +17,24 @@ export class Dashboard extends React.Component {
         correctAnswer: null        
     };
   }
+
+  componentWillMount() {
+      console.log('component will mount');
+      if (localStorage.getItem('authToken')) {
+          let authToken = localStorage.getItem('authToken');
+          let user = JSON.parse(localStorage.getItem('user'));
+          // user = JSON.parse(user);
+          console.log('user:', user)
+
+          this.props.dispatch(setAuthToken(authToken));
+          this.props.dispatch(authSuccess(user));
+      }
+  }
   
   componentDidMount() {
     this.props.dispatch(fetchQuestion());
   }
+
   onAnswerSubmit(input) {
     const answer = input.toLowerCase().trim();
     const correct = this.props.question.answer.toLowerCase();
@@ -34,20 +50,25 @@ export class Dashboard extends React.Component {
         })
     }
   }
-    onNextQuestion() {
-      this.setState({
-          feedback:'',
-          correctAnswer: null
-      })
-      this.props.dispatch(submitAnswer(this.state.correctAnswer));
+
+  onNextQuestion() {
+    this.setState({
+        feedback:'',
+        correctAnswer: null
+    })
+    this.props.dispatch(submitAnswer(this.state.correctAnswer));
   }
 
 
   render() {
     const isFeedback = this.state.feedback;
+    console.log('props:', this.props);
+
     return (
       <div>
-        <div className="dashboard-username">Salut {this.props.username}!</div>
+        <div className="dashboard-username">
+          <p>Salut {this.props.username}!</p>
+        </div>
         <div className="flag" />
         <div className="header">
           <h1>Apprenons le français!</h1>
@@ -58,23 +79,30 @@ export class Dashboard extends React.Component {
         <div className="question">
           <h1>{this.props.question.question}</h1>
         </div>
-                    {isFeedback ? (<AnswerFeedback feedback={this.state.feedback} onClick={() => this.onNextQuestion()} />)
-                     : 
-                     (<AnswerButton onClick={input => this.onAnswerSubmit(input)}/>)
-                     }
-        
+          {isFeedback ? (<AnswerFeedback feedback={this.state.feedback} onClick={() => this.onNextQuestion()} />)
+            : 
+            (<AnswerButton onClick={input => this.onAnswerSubmit(input)}/>)
+            }
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  const { currentUser } = state.auth;
+  console.log('state:', state);
+  // const { currentUser } = state.auth; 
+  // console.log('CU:', {currentUser});
+
   return {
-    username: state.auth.currentUser.username,
-    name: `${currentUser.firstName} ${currentUser.lastName}`,
+    // username: state.auth.currentUser.username,
+    // name: `${currentUser.firstName} ${currentUser.lastName}`,
     question: state.question.question,
   };
 };
 
-export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+// const mapStateToProps = state => ({
+  // username: state.auth.currentUser.username,
+//   question: state.question.question,
+// });
+
+export default (connect(mapStateToProps)(Dashboard));

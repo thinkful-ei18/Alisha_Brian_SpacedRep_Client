@@ -13,3 +13,11 @@ export const clearAuthToken = () => {
         localStorage.removeItem('authToken');
     } catch (e) {}
 };
+
+export const saveUserCredentials = user => {
+    console.log('SCU:', user);
+    console.log('strigified', JSON.stringify(user))
+    try {
+        localStorage.setItem('user', JSON.stringify(user));
+    } catch (e) {}
+}
