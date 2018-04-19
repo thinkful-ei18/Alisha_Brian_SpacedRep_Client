@@ -1,5 +1,8 @@
 import React from 'react';
 
+import "./dashboard.css";
+
+
 export default function AnswerFeedback(props) {
 
     return (
@@ -9,7 +12,7 @@ export default function AnswerFeedback(props) {
                     {props.feedback}
                 </div>
                 <div>
-                    <button className="button" onClick={() => props.onClick()}>
+                    <button className="next-button" onClick={() => props.onClick()}>
                         Next/Prochain
                 </button>
                 </div>

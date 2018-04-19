@@ -1,12 +1,16 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {clearAuth} from '../actions/auth';
-import {clearAuthToken} from '../local-storage';
+import { connect } from 'react-redux';
+import { clearAuth } from '../actions/auth';
+import { clearAuthToken, clearUserCredentials } from '../local-storage';
+
+import './header-bar.css';
 
 export class HeaderBar extends React.Component {
     logOut() {
         this.props.dispatch(clearAuth());
+
         clearAuthToken();
+        clearUserCredentials()
     }
 
     render() {
@@ -14,13 +18,13 @@ export class HeaderBar extends React.Component {
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button onClick={() => this.logOut()}>Log out</button>
+                <button onClick={() => this.logOut()} className="logout-button">Log out</button>
             );
         }
         return (
-            <div className="header-bar">
-                <h1>Foo App</h1>
+            <div className="header-bar-component">
                 {logOutButton}
+                <h1 className="app-name">Foodie Phonetics</h1>
             </div>
         );
     }

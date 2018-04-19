@@ -1,11 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import requiresLogin from "./requires-login";
-import { Link } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
+
 import { fetchQuestion, submitAnswer } from "../actions/question";
 import AnswerButton from "./answer-button.js"
 import AnswerFeedback from "./answer-feedback" 
+
 import "./dashboard.css";
+
 
 export class Dashboard extends React.Component {
   constructor(props) {
@@ -19,6 +21,7 @@ export class Dashboard extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchQuestion());
   }
+
   onAnswerSubmit(input) {
     const answer = input.toLowerCase().trim();
     const correct = this.props.question.answer.toLowerCase();
@@ -34,47 +37,58 @@ export class Dashboard extends React.Component {
         })
     }
   }
-    onNextQuestion() {
-      this.setState({
-          feedback:'',
-          correctAnswer: null
-      })
-      this.props.dispatch(submitAnswer(this.state.correctAnswer));
+
+  onNextQuestion() {
+    this.setState({
+        feedback:'',
+        correctAnswer: null
+    })
+    this.props.dispatch(submitAnswer(this.state.correctAnswer));
   }
 
 
   render() {
+    if (!this.props.loggedIn) {
+      return <Redirect to='/' />
+    }
+
     const isFeedback = this.state.feedback;
+
+
     return (
-      <div>
-        <div className="dashboard-username">Salut {this.props.username}!</div>
-        <div className="flag" />
-        <div className="header">
-          <h1>Apprenons le français!</h1>
-          <h3>Let's Learn French!</h3>
-          <h5>Quelle est la traduction en anglais de ce mot français?</h5>
-          <h6>What is the English translation of the French word?</h6>
+      <div className='dashboard-component'>
+
+        <div className="dashboard-username">
+          Salut {this.props.username}!
         </div>
-        <div className="question">
+
+        <div className="header">
+          <h2 className="french-cta">Apprenons le français!</h2>
+          <h4 className="english-cta">( Let's Learn French! )</h4>
+          <h3 className="french-prompt">Quelle est la traduction en anglais de ce mot français?</h3>
+          <h6 className="english-prompt">( What is the English translation of the French word? )</h6>
+        </div>
+
+        <div className="user-question">
           <h1>{this.props.question.question}</h1>
         </div>
-                    {isFeedback ? (<AnswerFeedback feedback={this.state.feedback} onClick={() => this.onNextQuestion()} />)
-                     : 
-                     (<AnswerButton onClick={input => this.onAnswerSubmit(input)}/>)
-                     }
+
+        <div>
+          {isFeedback ? (<AnswerFeedback feedback={this.state.feedback} onClick={() => this.onNextQuestion()} />)
+            : 
+            (<AnswerButton onClick={input => this.onAnswerSubmit(input)}/>)
+            }
+        </div>
         
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  const { currentUser } = state.auth;
-  return {
-    username: state.auth.currentUser.username,
-    name: `${currentUser.firstName} ${currentUser.lastName}`,
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null,
+    username: state.auth.currentUser ? state.auth.currentUser.username : null,
     question: state.question.question,
-  };
-};
+});
 
-export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+export default connect(mapStateToProps)(Dashboard);

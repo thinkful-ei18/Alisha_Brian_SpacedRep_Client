@@ -1,37 +1,78 @@
-.question {
-    text-align: center;
-    margin-top: 20px;
-    margin-left: 2%;
-    margin-right: 2%;
-    background: rgba(51, 81, 230, 0.959);
-    border-radius: 5px;
-   border-top: 2px #f01414;
-    padding-top: 120px;
-    padding-bottom: 120px;
-    color: white;
-  }
-  
-  .question div {
-    padding-top: 20px;
-  }
+/*
+https: //coolors.co/19227d-e50000-f5f5f2-3d7b9f-6096ba
+*/
 
-  .submit-button{
-    background-color: #f01414;
-    color: white;
-    box-shadow: 1pt 1pt rgba(51, 81, 230, 0.959);
-  }
-/*   
-  .question{
-    text-shadow: 0 0 2em rgba(16, 52, 226, 1), 0 0 1em white;
-    font-size: 2em;
-    font-weight: bold; 
-  } */
+.dashboard-component {
+  text-align: center;
+  padding: 0 15px 15px 15px;
+}
 
+.dashboard-username {}
 
-  .flag {
-    background-image: url(http://www.mistretta.eu/Temp%203/Bandiera%20animata%20Francia.gif);
-    background-repeat: round;
+.header {}
+
+.french-cta {
+  color: #19227D;
+  margin-bottom: 0;
+  margin-top: 35px;
+}
+
+.english-cta {
+  margin: 0;
+}
+
+.french-prompt {
+  color: #19227D;
+  margin-bottom: 0;
+}
+
+.english-prompt {
+  margin-top: 0;
+}
+
+.user-question {
+  background-color: #3D7B9F;
+  border-radius: 5px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: #E7ECEF;
+}
+
+.answer-feedback {
+  margin: 20px 0;
+  color: #19227D;
+  font-size: 18px;
+}
+
+.session-answer {
+  margin: 25px 0;
+}
+
+.session-answer-header {}
+
+.session-answer-input {
+  margin-top: 10px;
+}
+
+#textInput {
+  width: 85%;
+  height: 25px;
+  border-radius: 2px;
+  margin: 15px 0;
+}
+
+.submit-button,
+.next-button {
+  background-color: #6096BA;
+  width: 190px;
+  font-size: 15px;
+  height: 40px;
+  color: white;
+  box-shadow: 1pt 1pt rgba(51, 81, 230, 0.959);
+}
+
+/* .flag {
+  background-image: url(http://www.mistretta.eu/Temp%203/Bandiera%20animata%20Francia.gif);
+  background-repeat: round;
   height: 100px;
-  }
-
- 
+} */
