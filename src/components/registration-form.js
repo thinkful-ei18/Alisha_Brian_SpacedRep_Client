@@ -7,6 +7,7 @@ import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 const passwordLength = length({min: 8, max: 72});
 const matchesPassword = matches('password');
 
+
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
         const {fullname, email, username, password } = values;
@@ -23,10 +24,21 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
+                
                 <label htmlFor="fullname">Full Name</label>
-                <Field component={Input} type="text" name="fullname" />
+                <Field 
+                    component={Input} 
+                    type="text" 
+                    name="fullname" 
+                />
+
                 <label htmlFor="email">Email</label>
-                <Field component={Input} type="email" name="email" />
+                <Field 
+                    component={Input} 
+                    type="email" 
+                    name="email"
+                />
+
                 <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
@@ -34,6 +46,7 @@ export class RegistrationForm extends React.Component {
                     name="username"
                     validate={[required, nonEmpty, isTrimmed]}
                 />
+
                 <label htmlFor="password">Password</label>
                 <Field
                     component={Input}
@@ -41,6 +54,7 @@ export class RegistrationForm extends React.Component {
                     name="password"
                     validate={[required, passwordLength, isTrimmed]}
                 />
+
                 <label htmlFor="passwordConfirm">Confirm password</label>
                 <Field
                     component={Input}
@@ -48,6 +62,7 @@ export class RegistrationForm extends React.Component {
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
                 />
+
                 <button
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
