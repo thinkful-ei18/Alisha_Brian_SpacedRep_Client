@@ -6,9 +6,11 @@ export const fetchQuestionRequest = () => ({
 });
 
 export const FETCH_QUESTION_SUCCESS = "FETCH_QUESTION_SUCCESS";
-export const fetchQuestionSuccess = (question) => ({
+export const fetchQuestionSuccess = (question, score) => ({
   type: FETCH_QUESTION_SUCCESS,
-  question
+  question,
+  //======ADDING SCORE>>
+  score
 });
 
 export const FETCH_QUESTION_ERROR = "FETCH_QUESTION_ERROR";
@@ -48,8 +50,9 @@ export const fetchQuestion = () => (dispatch, getState) => {
       }
       return res.json();
     })
-    .then(question => {
-      dispatch(fetchQuestionSuccess(question));
+    //====ADDING SCORE=====>>
+    .then(question, score => {
+      dispatch(fetchQuestionSuccess(question, score));
     })
     .catch(err => {
       dispatch(fetchQuestionError(err));

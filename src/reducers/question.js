@@ -3,7 +3,8 @@ import * as actions from '../actions/question';
 const initialState = {
 	question: {},
 	loading: false,
-	error: null
+	error: null,
+	score: 0
 };
 
 export default function questionReducer(state = initialState, action) {
@@ -16,7 +17,10 @@ export default function questionReducer(state = initialState, action) {
 	if (action.type === actions.FETCH_QUESTION_SUCCESS) {
 		return Object.assign({}, state, {
 			loading: false,
-			question: action.question
+			question: action.question,
+  //======ADDING SCORE>>
+			
+			score: action.score
 		});
 	}
 	if (action.type === actions.FETCH_QUESTION_ERROR) {
