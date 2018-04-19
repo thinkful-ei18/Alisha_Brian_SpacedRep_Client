@@ -1,3 +1,4 @@
+/* ========== AUTH TOKEN ========== */
 export const loadAuthToken = () => {
     return localStorage.getItem('authToken');
 };
@@ -14,9 +15,9 @@ export const clearAuthToken = () => {
     } catch (e) {}
 };
 
+
+/* ========== USER CREDENTIALS ========== */
 export const saveUserCredentials = user => {
-    console.log('SCU:', user);
-    console.log('strigified', JSON.stringify(user))
     try {
         localStorage.setItem('user', JSON.stringify(user));
     } catch (e) {}
