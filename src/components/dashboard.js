@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Redirect } from 'react-router-dom';
 
 import { fetchQuestion, submitAnswer } from "../actions/question";
-import { setAuthToken, authSuccess } from '../actions/auth'
 import AnswerButton from "./answer-button.js"
 import AnswerFeedback from "./answer-feedback" 
 
@@ -16,19 +16,6 @@ export class Dashboard extends React.Component {
         feedback:'',
         correctAnswer: null        
     };
-  }
-
-  componentWillMount() {
-      console.log('component will mount');
-      if (localStorage.getItem('authToken')) {
-          let authToken = localStorage.getItem('authToken');
-          let user = JSON.parse(localStorage.getItem('user'));
-          // user = JSON.parse(user);
-          console.log('user:', user)
-
-          this.props.dispatch(setAuthToken(authToken));
-          this.props.dispatch(authSuccess(user));
-      }
   }
   
   componentDidMount() {
@@ -61,15 +48,17 @@ export class Dashboard extends React.Component {
 
 
   render() {
+    if (!this.props.loggedIn) {
+      return <Redirect to='/' />
+    }
+
     const isFeedback = this.state.feedback;
-    console.log('props:', this.props);
 
     return (
-      <div>
+      <div className='dashboard-component'>
         <div className="dashboard-username">
           <p>Salut {this.props.username}!</p>
         </div>
-        <div className="flag" />
         <div className="header">
           <h1>Apprenons le français!</h1>
           <h3>Let's Learn French!</h3>
@@ -88,21 +77,10 @@ export class Dashboard extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  console.log('state:', state);
-  // const { currentUser } = state.auth; 
-  // console.log('CU:', {currentUser});
-
-  return {
-    // username: state.auth.currentUser.username,
-    // name: `${currentUser.firstName} ${currentUser.lastName}`,
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null,
+    username: state.auth.currentUser ? state.auth.currentUser.username : null,
     question: state.question.question,
-  };
-};
+});
 
-// const mapStateToProps = state => ({
-  // username: state.auth.currentUser.username,
-//   question: state.question.question,
-// });
-
-export default (connect(mapStateToProps)(Dashboard));
+export default connect(mapStateToProps)(Dashboard);
