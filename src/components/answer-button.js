@@ -1,5 +1,8 @@
 import React from 'react';
 
+import "./dashboard.css";
+
+
 export default function AnswerButton(props) {
     return (
         <div className="session-answer">
@@ -11,7 +14,7 @@ export default function AnswerButton(props) {
                         type="text"
                         id='textInput' />
                 <div>
-                    <button className="button" onClick={() => props.onClick(document.getElementById('textInput').value)}>
+                    <button className="submit-button" onClick={() => props.onClick(document.getElementById('textInput').value)}>
                     Submit/Soumettre
                     
                 </button>
