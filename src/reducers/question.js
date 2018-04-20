@@ -2,6 +2,7 @@ import * as actions from '../actions/question';
 
 const initialState = {
 	question: {},
+	score: 0,
 	loading: false,
 	error: null
 };
@@ -36,6 +37,12 @@ export default function questionReducer(state = initialState, action) {
         return Object.assign({}, state, {
             error: action.error
         })
+	}
+	if (action.type === actions.UPDATE_SCORE_SUCCESS) {
+		return Object.assign({}, state, {
+			loading: false,
+			score: action.score
+		});
 	}
 	return state;
 }

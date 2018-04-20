@@ -33,6 +33,12 @@ export const submitAnswerError = error => ({
     error
 })
 
+export const UPDATE_SCORE_SUCCESS = 'UPDATE_SCORE_SUCCESS';
+export const updateScoreSuccess = score => ({
+    type: UPDATE_SCORE_SUCCESS,
+    score
+})
+
 export const fetchQuestion = () => (dispatch, getState) => {
   const jwt = getState().auth.authToken;
   fetch(`${API_BASE_URL}/user/question`, {
@@ -48,8 +54,13 @@ export const fetchQuestion = () => (dispatch, getState) => {
       }
       return res.json();
     })
-    .then(question => {
+    .then(res => {
+      let question = {
+        question: res.question,
+        answer: res.answer
+      }
       dispatch(fetchQuestionSuccess(question));
+      dispatch(updateScoreSuccess(res.score))
     })
     .catch(err => {
       dispatch(fetchQuestionError(err));
@@ -73,9 +84,19 @@ export const submitAnswer = (input) => (dispatch, getState) => {
       if(!res.ok) {
         throw new Error(res.statusTest)
       }
-      dispatch(submitAnswerSuccess());
-      dispatch(fetchQuestion());
-  }).catch(err =>
-      dispatch(submitAnswerError(err))
+      return res.json()
+  })
+  .then(res => {
+    let question = {
+      question: res.question,
+      answer: res.answer
+    }
+
+    dispatch(submitAnswerSuccess());
+    dispatch(fetchQuestionSuccess(question))
+    dispatch(updateScoreSuccess(res.score))
+  })
+  .catch(err =>
+    dispatch(submitAnswerError(err))
   );
 }

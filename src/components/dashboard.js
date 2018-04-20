@@ -69,6 +69,7 @@ export class Dashboard extends React.Component {
           <h6 className="english-prompt">( What is the English translation of the French word? )</h6>
         </div>
 
+        {this.props.score}
         <div className="user-question">
           <h1>{this.props.question.question}</h1>
         </div>
@@ -86,9 +87,10 @@ export class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null,
-    username: state.auth.currentUser ? state.auth.currentUser.username : null,
-    question: state.question.question,
+  loggedIn: state.auth.currentUser !== null,
+  username: state.auth.currentUser ? state.auth.currentUser.username : null,
+  question: state.question.question,
+  score: state.question.score
 });
 
 export default connect(mapStateToProps)(Dashboard);
