@@ -48,6 +48,7 @@ export class Dashboard extends React.Component {
 
 
   render() {
+
     if (!this.props.loggedIn) {
       return <Redirect to='/' />
     }
@@ -69,16 +70,18 @@ export class Dashboard extends React.Component {
           <h6 className="english-prompt">( What is the English translation of the French word? )</h6>
         </div>
 
-        {this.props.score}
-        <div className="user-question">
-          <h1>{this.props.question.question}</h1>
-        </div>
+        <p className="user-score">You've translated {this.props.score} words correctly using Foodie Phonetics!</p>
+        <div className="learning-module">
+          <div className="user-question">
+            <h1>{this.props.question.question}</h1>
+          </div>
 
-        <div>
-          {isFeedback ? (<AnswerFeedback feedback={this.state.feedback} onClick={() => this.onNextQuestion()} />)
-            : 
-            (<AnswerButton onClick={input => this.onAnswerSubmit(input)}/>)
-            }
+          <div className='user-feedback'>
+            {isFeedback ? (<AnswerFeedback feedback={this.state.feedback} onClick={() => this.onNextQuestion()} />)
+              : 
+              (<AnswerButton onClick={input => this.onAnswerSubmit(input)}/>)
+              }
+          </div>
         </div>
         
       </div>
