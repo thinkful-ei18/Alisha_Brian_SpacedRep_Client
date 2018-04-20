@@ -22,10 +22,10 @@ For production, Heroku and Netlify were used.
 ![Alt text](https://github.com/thinkful-ei18/Alisha_Brian_SpacedRep_Client/blob/master/FoodiePhonetics_TechnologiesUsed_041918.png?raw=true "Visual representation of technologies used to create Foodie Phonetics")
 
 ### The App
-The production-ready version of Foodie Phonetics can be found at: [foodiephonetics.netlify.com](foodiephonetics.netlify.com)
+The production-ready version of Foodie Phonetics can be found at: http://www.foodiephonetics.netlify.com
 
 ### Login Page
-![Alt text](https://github.com/thinkful-ei18/Alisha_Brian_SpacedRep_Client/blob/master/FoodiePhonetics_login-page_042018.png?raw=true "Foodie Phonetics Login Page")
+![Alt text](https://github.com/thinkful-ei18/Alisha_Brian_SpacedRep_Client/blob/master/FoodiePhonetics_LoginPage_042018.png?raw=true "Foodie Phonetics Login Page")
 
 ### Registration Page
 ![Alt text](https://github.com/thinkful-ei18/Alisha_Brian_SpacedRep_Client/blob/master/FoodiePhonetics_registration-page_042018.png?raw=true "Foodie Phonetics Registration Page")
@@ -45,5 +45,7 @@ The production-ready version of Foodie Phonetics can be found at: [foodiephoneti
 
 #### React Main Page
 ![Alt text](https://github.com/thinkful-ei18/Alisha_Brian_SpacedRep_Client/blob/master/FoodiePhonetics_ReactMainPage_041918.png?raw=true "React Main Page")
+
+#### Linked List Algorithm Us
 
 
