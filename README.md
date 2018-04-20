@@ -9,12 +9,12 @@ Using a spaced repetition algorithm, Foodie Phonetics teaches the user how to sa
 
 #### Technologies Used ####
 
-The front-end was developed with React, Redux, Redux Form
-Styling was done with CSS
+The front-end was developed with React, Redux, and Redux Form.
+Styling was done with CSS.
 
 The back-end was developed with NodeJS, MongoDB, Mongoose, and Express.
 
-Testing was done with Mocha, Chai, and Jest
+Testing was done with Mocha, Chai, and Jest.
 
 For production, Heroku and Netlify were used.
 
