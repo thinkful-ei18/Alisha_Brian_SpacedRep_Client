@@ -38,14 +38,11 @@ The production-ready version of Foodie Phonetics can be found at: https://foodie
 #### React Redux Actions
 ![Alt text](https://github.com/thinkful-ei18/Alisha_Brian_SpacedRep_Client/blob/master/FoodiePhonetics_ReduxActions_041918.png?raw=true "React Redux Actions")
 
-
 #### React Redux Reducers
 ![Alt text](https://github.com/thinkful-ei18/Alisha_Brian_SpacedRep_Client/blob/master/FoodiePhonetics_ReduxReducers_041918.png?raw=true "React Redux Reducers")
-
 
 #### React Main Page
 ![Alt text](https://github.com/thinkful-ei18/Alisha_Brian_SpacedRep_Client/blob/master/FoodiePhonetics_ReactMainPage_041918.png?raw=true "React Main Page")
 
 #### Linked List Algorithm Us
-
-
+![Alt text](https://github.com/thinkful-ei18/Alisha_Brian_SpacedRep_Client/blob/master/FoodiePhonetics_LinkedListAlgorithm_042018.png?raw=true "Foodie Phonetics Linked List Algorithm")
