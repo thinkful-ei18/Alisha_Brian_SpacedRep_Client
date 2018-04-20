@@ -25,11 +25,13 @@ For production, Heroku and Netlify were used.
 The production-ready version of Foodie Phonetics can be found at: [foodiephonetics.netlify.com](foodiephonetics.netlify.com)
 
 ### Login Page
+![Alt text](https://github.com/thinkful-ei18/Alisha_Brian_SpacedRep_Client/blob/master/FoodiePhonetics_login-page_042018.png?raw=true "Foodie Phonetics Login Page")
 
 ### Registration Page
+![Alt text](https://github.com/thinkful-ei18/Alisha_Brian_SpacedRep_Client/blob/master/FoodiePhonetics_registration-page_042018.png?raw=true "Foodie Phonetics Registration Page")
 
-
-### Landing Page
+### Main Page
+![Alt text](https://github.com/thinkful-ei18/Alisha_Brian_SpacedRep_Client/blob/master/FoodiePhonetics_main-page_042018.png?raw=true "Foodie Phonetics Main Page")
 
 # The Code
 
