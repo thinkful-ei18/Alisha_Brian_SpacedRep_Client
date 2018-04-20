@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import {loadAuthToken} from './local-storage';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
-import {setAuthToken, authSuccess, refreshAuthToken} from './actions/auth';
+import {setAuthToken, authSuccess } from './actions/auth';
 import questionReducer from './reducers/question'
 
 const store = createStore(

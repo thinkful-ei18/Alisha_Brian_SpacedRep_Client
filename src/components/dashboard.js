@@ -90,10 +90,9 @@ export class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null,
-  username: state.auth.currentUser ? state.auth.currentUser.username : null,
-  question: state.question.question,
-  score: state.question.score
+    loggedIn: state.auth.currentUser !== null,
+    username: state.auth.currentUser ? state.auth.currentUser.username : null,
+    question: state.question.question,
 });
 
 export default connect(mapStateToProps)(Dashboard);
