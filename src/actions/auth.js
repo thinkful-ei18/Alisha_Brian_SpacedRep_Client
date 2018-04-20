@@ -80,6 +80,25 @@ export const login = (username, password) => dispatch => {
     );
 };
 
+
+export const logout = () => (dispatch, getState) => {
+    const token = getState().auth.authToken;
+  
+    return (
+        fetch(`${API_BASE_URL}/user/reset`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                authorization: `Bearer ${token}`
+                }
+        })
+        .then(res => res)
+        .catch(err => err)
+    );
+}
+
+
+
 // export const refreshAuthToken = () => (dispatch, getState) => {
 //     dispatch(authRequest());
 //     const authToken = getState().auth.authToken;
