@@ -98,8 +98,13 @@ MEDIA QUERIES
     width: 45%;
     max-width: 500px;
   }
+
+  .answer-feedback {
+    color: #F5F5F2;
+  }
+
   .user-feedback {
-    background-color: #F5F5F2;
+    background-color: #19227D;
     border-radius: 5px;
     padding: 60px 15px;
   }
