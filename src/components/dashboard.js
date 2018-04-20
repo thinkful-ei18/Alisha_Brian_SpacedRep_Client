@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 import { fetchQuestion, submitAnswer } from "../actions/question";
 import AnswerButton from "./answer-button.js";
@@ -59,9 +58,7 @@ export class Dashboard extends React.Component {
 
     return (
       <div className="dashboard-component">
-        <Link to="/AboutPage">
-          <button className="about-page-button">About Foodie Phonetics</button>
-        </Link>
+    
         <div className="dashboard-username">Salut {this.props.username}!</div>
 
         <div className="header">

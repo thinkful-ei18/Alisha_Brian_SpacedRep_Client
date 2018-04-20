@@ -1,0 +1,45 @@
+.about-page {
+  background-color: rgba(25, 33, 125, 0.963);
+    color: white;
+    text-align: center;
+    width: 80%;
+    margin: 15px auto;
+    box-shadow: 8px 8px #E50000;    
+    border-radius: 2%;
+  padding: 15px;
+    
+}
+
+.return-link
+ {
+  background-color: #6096BA;
+  width: 190px;
+  font-size: 15px;
+  height: 40px;
+  color: white;
+  box-shadow: 1pt 1pt rgba(51, 81, 230, 0.959);
+  border-radius: 2%;
+  margin: 15px auto;
+}
+
+.return-button{
+    text-align: center;
+}
+
+.about-page-button{
+float: left;
+    border: none;
+    background: transparent;
+}
+
+/* ============================ 
+MEDIA QUERIES
+============================*/
+
+/* desktop */
+
+@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .about-page {
+          width: 85%;
+      }
+    }

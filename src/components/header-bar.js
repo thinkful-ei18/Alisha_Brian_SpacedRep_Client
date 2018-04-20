@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken, clearUserCredentials } from '../local-storage';
+import { Link } from "react-router-dom";
 
 import './header-bar.css';
 
@@ -23,6 +24,9 @@ export class HeaderBar extends React.Component {
         }
         return (
             <div className="header-bar-component">
+                <Link to="/about">
+          <button className="about-page-button">About Foodie Phonetics</button>
+        </Link>
                 {logOutButton}
                 <h1 className="app-name">Foodie Phonetics</h1>
             </div>
