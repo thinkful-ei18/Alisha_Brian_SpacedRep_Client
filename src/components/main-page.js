@@ -8,23 +8,20 @@ export class MainPage extends React.Component {
     this.props.dispatch(fetchQuestions());
   }
 
-
   render() {
-
-
     return (
       <div>
-      <div className="header">
-        <h1>Let's Learn French!</h1>
-        <p>
-          Translate the word in the text box and hit submit to check your
-          answer.
-        </p>
+        <div>
+          <h1>Let's Learn French!</h1>
+          <p>
+            Translate the word in the text box and hit submit to check your
+            answer.
+          </p>
         </div>
-        <div className="question" >
-        console.log(this.props.questions)
-        <h1>{this.props.questions}</h1>
-      </div>
+        <div className="question">
+          console.log(this.props.questions)
+          <h1>{this.props.questions}</h1>
+        </div>
       </div>
     );
   }

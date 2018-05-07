@@ -24,9 +24,9 @@ export class HeaderBar extends React.Component {
             );
         }
         return (
-            <div className="header-bar-component">
-                <Link to="/about">
-          <button className="about-page-button">About Foodie Phonetics</button>
+            <div className="header-bar">
+                <Link to="/about" className="about-page-button">
+          About Foodie Phonetics
         </Link>
                 {logOutButton}
                 <h1 className="app-name">Foodie Phonetics</h1>

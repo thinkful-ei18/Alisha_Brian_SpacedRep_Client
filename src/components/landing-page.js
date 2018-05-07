@@ -19,7 +19,7 @@ export function LandingPage(props) {
     }
 
     return (
-        <div className="landing-page-component">
+        <div className="landing-page">
             <LoginForm />
             <Link to="/register" style={style}>Register</Link>
         </div>

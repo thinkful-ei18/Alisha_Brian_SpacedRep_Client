@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 import RegistrationForm from './registration-form';
 
@@ -13,16 +13,13 @@ export function RegistrationPage(props) {
         return <Redirect to="/dashboard" />;
     }
 
-    const style = {
-        "text-decoration": "none",
-        color: "#19227D"
-    }
+  
 
     return (
         <div className="registration-page-component">
             <h4 className="register-prompt">Register your free account!</h4>
             <RegistrationForm />
-            <Link to="/" style={style}>Login</Link>
+           
         </div>
     );
 }

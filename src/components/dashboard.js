@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
 import { fetchQuestion, submitAnswer } from "../actions/question";
-import AnswerButton from "./answer-button.js";
+import AnswerForm from "./answer-form.js";
 import AnswerFeedback from "./answer-feedback";
 
 import "./dashboard.css";
@@ -57,11 +57,11 @@ export class Dashboard extends React.Component {
     const isFeedback = this.state.feedback;
 
     return (
-      <div className="dashboard-component">
+      <div className="dashboard">
     
-        <div className="dashboard-username">Salut {this.props.username}!</div>
+        <div >Salut {this.props.username}!</div>
 
-        <div className="header">
+        <div>
           <h2 className="french-cta">Apprenons le français!</h2>
           <h4 className="english-cta">( Let's Learn French! )</h4>
           <h3 className="french-prompt">
@@ -88,7 +88,7 @@ export class Dashboard extends React.Component {
                 onClick={() => this.onNextQuestion()}
               />
             ) : (
-              <AnswerButton onClick={input => this.onAnswerSubmit(input)} />
+              <AnswerForm onClick={input => this.onAnswerSubmit(input)} />
             )}
           </div>
         </div>

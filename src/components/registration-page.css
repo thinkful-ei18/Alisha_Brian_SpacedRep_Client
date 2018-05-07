@@ -4,7 +4,7 @@ https: //coolors.co/19227d-e50000-f5f5f2-3d7b9f-6096ba
 
 .registration-page-component {
   text-align: center;
-  padding: 15px;
+  padding: 5px;
 }
 
 .register-prompt {
@@ -26,4 +26,19 @@ https: //coolors.co/19227d-e50000-f5f5f2-3d7b9f-6096ba
   height: 30px;
   border-radius: 3px;
   margin-top: 15px;
+}
+
+.login-button {
+  color: #ffffff;
+  background-color: #19227D;
+  width: 80px;
+  height: 30px;
+  border-radius: 3px;
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.login-link {
+  color: white;
+  text-decoration: none;
 }

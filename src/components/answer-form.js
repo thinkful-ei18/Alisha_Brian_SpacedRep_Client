@@ -3,10 +3,10 @@ import React from 'react';
 import "./dashboard.css";
 
 
-export default function AnswerButton(props) {
+export default function AnswerForm(props) {
     return (
         <div className="session-answer">
-            <div className="session-answer-header">
+            <div className="session-answer-input-title">
                 Please enter English translation below:
             </div>
             <div className="session-answer-input">
