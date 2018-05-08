@@ -1,10 +1,12 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
+import {Link} from 'react-router-dom'; 
+
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
-import {Link} from 'react-router-dom'; 
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+
 const passwordLength = length({min: 8, max: 72});
 const matchesPassword = matches('password');
 
@@ -72,7 +74,7 @@ export class RegistrationForm extends React.Component {
                     Register
                 </button>
                 <br/>
-                <button className="login-button">
+                <button >
                 <Link to="/" className="login-link">Login</Link>
                 </button>
             </form>
