@@ -73,8 +73,7 @@ export class Dashboard extends React.Component {
         </div>
 
         <p className="user-score">
-          You've translated {this.props.score} words correctly using Foodie
-          Phonetics!
+          You've translated {this.props.score} words correctly!
         </p>
         <div className="learning-module">
           <div className="user-question">

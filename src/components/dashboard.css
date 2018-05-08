@@ -10,7 +10,7 @@ https://coolors.co/19227d-e50000-f5f5f2-3d7b9f-6096ba
 .french-cta {
   color: #19227D;
   margin-bottom: 0;
-  margin-top: 35px;
+  margin-top: 5px;
 }
 
 .english-cta {
@@ -20,10 +20,12 @@ https://coolors.co/19227d-e50000-f5f5f2-3d7b9f-6096ba
 .french-prompt {
   color: #19227D;
   margin-bottom: 0;
+  display: none;
 }
 
 .english-prompt {
   margin-top: 0;
+  display: none;
 }
 
 .user-question {
@@ -44,7 +46,6 @@ https://coolors.co/19227d-e50000-f5f5f2-3d7b9f-6096ba
 .session-answer {
   margin: 25px 0;
 }
-
 
 .session-answer-input {
   margin-top: 10px;
@@ -93,11 +94,9 @@ MEDIA QUERIES
     width: 45%;
     max-width: 500px;
   }
-
   .answer-feedback {
     color: #F5F5F2;
   }
-
   .user-feedback {
     background-color: #19227D;
     border-radius: 5px;
@@ -114,5 +113,9 @@ MEDIA QUERIES
   }
   .session-answer-input-title {
     color: #F5F5F2;
+  }
+  .french-prompt,
+  .english-prompt {
+    display: inherit;
   }
 }

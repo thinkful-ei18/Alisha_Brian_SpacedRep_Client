@@ -14,7 +14,7 @@ export function LandingPage(props) {
     } 
 
     const style = {
-        "text-decoration": "none",
+        "textDecoration": "none",
         color: "#19227E"
     }
 
