@@ -11,7 +11,7 @@ Using a spaced repetition algorithm, Foodie Phonetics teaches the user how to sa
 The production-ready version of Foodie Phonetics can be found at: https://foodiephonetics.netlify.com
 
 ### Demo Account
-username: demo@gmail.com <br>
+username: demo <br>
 password: demouser123
 
 ### The API
