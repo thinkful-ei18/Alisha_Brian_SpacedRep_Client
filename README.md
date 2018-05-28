@@ -10,6 +10,10 @@ Using a spaced repetition algorithm, Foodie Phonetics teaches the user how to sa
 ### The App
 The production-ready version of Foodie Phonetics can be found at: https://foodiephonetics.netlify.com
 
+### Demo Account
+username: demo@gmail.com <br>
+password: demouser123
+
 ### The API
 A RESTful API was created to handle the requests from the client portion of Foodie Phonetics. Please refer to the server repo for further details. (https://github.com/thinkful-ei18/alisha_brian_spacedRep_server)
 
