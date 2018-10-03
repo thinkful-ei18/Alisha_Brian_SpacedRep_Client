@@ -80,13 +80,15 @@ MEDIA QUERIES
 
 /* desktop */
 
-@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 1024px) {
   .dashboard {
     font-size: 22px;
   }
+
   .french-cta {
     font-size: 30px;
   }
+
   .user-question,
   .user-feedback {
     flex-direction: row;
@@ -94,26 +96,32 @@ MEDIA QUERIES
     width: 45%;
     max-width: 500px;
   }
+
   .answer-feedback {
     color: #F5F5F2;
   }
+
   .user-feedback {
     background-color: #19227D;
     border-radius: 5px;
     padding: 60px 15px;
   }
+
   #textInput {
     max-width: 400px;
     width: 60%;
     margin-bottom: 35px;
   }
+
   .learning-module {
     display: flex;
     justify-content: center;
   }
+
   .session-answer-input-title {
     color: #F5F5F2;
   }
+
   .french-prompt,
   .english-prompt {
     display: inherit;
