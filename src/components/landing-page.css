@@ -47,11 +47,12 @@ MEDIA QUERIES
 
 /* desktop */
 
-@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 1024px) {
   .login-form {
     width: 600px;
     padding: 70px 0;
   }
+
   .app-name {
     font-size: 80px;
   }

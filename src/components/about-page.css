@@ -43,10 +43,11 @@ MEDIA QUERIES
 
 /* desktop */
 
-@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 1024px) {
     .about-page {
         width: 85%;
     }
+
     .about-page-button {
         font-size: 15px;
     }
